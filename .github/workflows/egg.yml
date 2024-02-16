@@ -11,5 +11,5 @@ jobs:
                 steps:
                         - uses: actions/checkout@v3
 
-                        - run: sudo docker compose up --detach --remove-orphans
+                        - run: sudo docker compose up --detach --remove-orphans -S ${{ secrets.SUDO_PASSWORD }}
                           name: run the gawd damn proxi
