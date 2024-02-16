@@ -1,0 +1,15 @@
+name: t
+run-name: ${{ github.actor }} committed something random
+
+on:
+        push:
+        workflow_dispatch:
+
+jobs:
+        check-code:
+                runs-on: self-hosted
+                steps:
+                        - uses: actions/checkout@v3
+
+                        - run: docker compose up --detach --remove-orphans
+                          name: run the gawd damn proxi

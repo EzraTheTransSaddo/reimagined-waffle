@@ -1,0 +1,12 @@
+version: '3.8'
+name: proxy
+
+services:
+        proxy:
+                image: bracketed/proxy:latest
+                container_name: proxy
+                restart: always
+                ports:
+                        - 3000:3000
+                environment:
+                        - EXPRESS_PORT=3000
